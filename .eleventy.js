@@ -1,5 +1,5 @@
 const htmlmin = require("html-minifier");
-const pluginSass = require("eleventy-plugin-sass");
+//const pluginSass = require("eleventy-plugin-sass");
 
 module.exports = function(eleventyConfig) {
 
@@ -18,6 +18,16 @@ module.exports = function(eleventyConfig) {
 
   //eleventyConfig.addPlugin(pluginSass, {});
 
-  //eleventyConfig.addPassthroughCopy({ "resources/sass/": "css" });
+  //eleventyConfig.addPassthroughCopy({ "src/site/css" });
+
+  return {
+    templateFormats: ["md", "njk", "html", "liquid", "css"],
+    dir: {
+      data: "_includes/data",
+      includes: "_includes/templates",
+      input: "src/site",
+      output: "dist"
+    }
+  };
   
 };
